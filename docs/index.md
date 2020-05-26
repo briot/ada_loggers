@@ -1,7 +1,6 @@
 ## Table of contents:
-   - [index.md](Features): this document
-   - [api.md](API): more detailed description of the API
-   - [implementation.md](Implementation): implementation details
+   - [Features](index.md): this document
+   - [Implementation](implementation.md): implementation details
 
 ## Features
 
@@ -392,6 +391,17 @@ exception
       Log (Me.Error & "Unexpected" & E);
 end P2;
 ```
+
+### Dynamic configuration
+
+How many times have you run a long-running program to discover there is a bug,
+but you have not activated all the log messages you need to fully understand
+it ?
+
+The loggers can optionally open a socket, to which users connect via `telnet`
+for instance. This socket supports a simple text protocol, which let you
+change the threshold of any logger, for instance to decide that you want to
+see all messages are priority DEBUG or above, at least temporarily.
 
 ### Extensible
 
