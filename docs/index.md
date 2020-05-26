@@ -340,12 +340,12 @@ In performance-sensitive contexts, you should use asynchronous logging to
 defer as much work as possible to the background task (formatting the message,
 locking streams, writing to files,...).
 
-When logging a simple string, it takes 570 nanosecond per message on this
-machine (17.5 million messages per second in the user task, though it takes
+When logging a simple string, it takes 76 nanosecond per message on this
+machine (13.1 million messages per second in the user task, though it takes
 longer for the background task to eventually complete writing to the file).
 
 When the message is slightly more complex (a string and an integer), it takes
-590 nanosecond per message, or 16.9 million messages per second).
+237 nanosecond per message, or 4.2 million messages per second).
 
 *This library is up to 3 times faster than `GNATCOLL.Traces` when actually
 writing messages, and up to 150 times faster for inactive messages.*
